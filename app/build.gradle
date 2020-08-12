@@ -26,4 +26,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    //qmui
+    //https://qmuiteam.com/android/
+    implementation 'com.qmuiteam:qmui:2.0.0-alpha10'
+    implementation 'com.qmuiteam:arch:2.0.0-alpha10'
+
+    //okhtto3.0 https://www.jianshu.com/p/da4a806e599b
+    //https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    //BaseRecyclerViewAdapter RecyclerView超级万能适配器
+    //https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //base64加解密
+    implementation files('libs/BASE64.jar')
+
+    //九宫格解锁
+    implementation 'com.github.LeonDevLifeLog:GestureLockView:v0.0.1'
 }
