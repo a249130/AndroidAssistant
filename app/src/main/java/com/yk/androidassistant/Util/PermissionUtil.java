@@ -8,11 +8,11 @@ import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import com.rh.nhcj.BuildConfig;
+import com.yk.androidassistant.BuildConfig;
 
 /**
  * 跳转权限申请界面工具类
- * Created by jsgyrcb-yk on 2019/12/13 0013.
+ * Created by yk on 2019/12/13 0013.
  */
 public class PermissionUtil {
     private static final String TAG = "PermissionUtil";

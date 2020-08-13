@@ -19,4 +19,8 @@
         <item name="qmui_skin_support_topbar_text_btn_color_state_list">@color/qmui_config_color_white</item>
     </style>
 
+    <attr name="app_skin_btn_test_border_single" format="color|reference" />
+    <attr name="app_skin_btn_test_bg_single" format="color|reference" />
+
+    <attr name="app_skin_common_title_text_color" format="color|reference" />
 </resources>

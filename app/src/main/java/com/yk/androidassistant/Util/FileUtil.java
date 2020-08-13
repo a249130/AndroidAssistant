@@ -7,9 +7,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
- * Created by jsgyrcb-yk on 2020/4/29 0029.
+ * 文件处理工具类
+ * Created by yk on 2020/4/29 0029.
  */
-
 public class FileUtil {
     private static final String TAG = "FileUtil";
 

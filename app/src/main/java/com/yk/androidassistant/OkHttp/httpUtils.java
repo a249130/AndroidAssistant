@@ -1,6 +1,6 @@
 package com.yk.androidassistant.OkHttp;
 
-import com.rh.nhcj.OkHttp.model.Agreement;
+import com.yk.androidassistant.OkHttp.model.Agreement;
 
 import org.json.JSONObject;
 

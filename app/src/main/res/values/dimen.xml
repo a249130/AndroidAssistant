@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!--华为meta20-->
+<resources>
+    <!--main-->
+    <dimen name="main_about">25dp</dimen>
+    <dimen name="main_edittext_width_user">200dp</dimen>
+    <dimen name="main_edittext_width_pwd">200dp</dimen>
+    <dimen name="main_but_login_marginTop">10dp</dimen>
+
+    <dimen name="edittext_padding">10dp</dimen>
+
+    <dimen name="edittext_paddingright">10dp</dimen>
+    <dimen name="tablerow_height">5dp</dimen>
+
+
+    <dimen name="view_width">1.0dp</dimen>
+</resources>

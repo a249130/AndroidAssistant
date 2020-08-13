@@ -7,7 +7,8 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 /**
- * Created by Administrator on 2020/6/30 0030.
+ * 加解密处理类
+ * Created by yk on 2020/6/30 0030.
  */
 
 public class DeEnCode {

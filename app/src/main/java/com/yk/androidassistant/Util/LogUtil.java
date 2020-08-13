@@ -4,7 +4,7 @@ import android.util.Log;
 
 /**
  * 日志管理工具
- * Created by jsgyrcb-yk on 2020/1/10 0010.
+ * Created by yk on 2020/1/10 0010.
  */
 public class LogUtil {
 

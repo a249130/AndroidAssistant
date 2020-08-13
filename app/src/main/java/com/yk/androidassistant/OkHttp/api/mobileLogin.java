@@ -1,7 +1,7 @@
 package com.yk.androidassistant.OkHttp.api;
 
-import com.rh.nhcj.OkHttp.httpUtils;
-import com.rh.nhcj.Util.LogUtil;
+import com.yk.androidassistant.OkHttp.httpUtils;
+import com.yk.androidassistant.Util.LogUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;

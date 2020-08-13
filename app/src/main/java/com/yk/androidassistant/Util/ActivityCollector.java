@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * activity管理类
- * Created by jsgyrcb-yk on 2019/12/7 0007.
+ * Created by yk on 2019/12/7 0007.
  */
 public class ActivityCollector {
     public static List<Activity> activities = new ArrayList<>();

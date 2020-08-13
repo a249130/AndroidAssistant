@@ -1,5 +1,6 @@
 package com.yk.androidassistant.View;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.SpannableString;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 /**
  * Created by jsgyrcb-yk on 2020/07/16 0016.
  */
+@SuppressLint("AppCompatCustomView")
 public class ColorTextView extends TextView {
 
     public ColorTextView(Context context) {

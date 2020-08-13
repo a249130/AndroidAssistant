@@ -1,14 +1,23 @@
 package com.yk.androidassistant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.yk.androidassistant.Base.BaseQMUIActivity;
+
+public class MainActivity extends BaseQMUIActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected int initLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+        setTitle("首页");
     }
 }

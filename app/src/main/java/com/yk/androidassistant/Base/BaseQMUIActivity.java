@@ -27,6 +27,7 @@ import com.qmuiteam.qmui.skin.QMUISkinHelper;
 import com.qmuiteam.qmui.skin.QMUISkinManager;
 import com.qmuiteam.qmui.skin.QMUISkinValueBuilder;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
+import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
@@ -61,6 +62,8 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
     //是否显示状态栏
 //    private boolean isShowStatusBar = true;
 
+    QMUITopBarLayout mTopBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,18 +71,18 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         //activity管理
         ActivityCollector.addActivity(this);
-        if (!isShowTitle) {
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-            if (getSupportActionBar() != null)
-                getSupportActionBar().hide();
-        } else { //显示title
-            if (getSupportActionBar() != null)
-                //左上角添加返回按钮
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-        if (!isShowStatusBar)
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        if (!isShowTitle) {
+//            requestWindowFeature(Window.FEATURE_NO_TITLE);
+//            if (getSupportActionBar() != null)
+//                getSupportActionBar().hide();
+//        } else { //显示title
+//            if (getSupportActionBar() != null)
+//                //左上角添加返回按钮
+//                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
+//        if (!isShowStatusBar)
+//            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 //        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
 //            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -87,6 +90,8 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
 
         //初始化布局
         setContentView(initLayout());
+        //初始化mTopBar
+        mTopBar = findViewById(R.id.topbar);
         //初始化全局变量
         application = (MyApplication) getApplication();
         //初始化SharedPreferences
@@ -108,6 +113,15 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
                     "系统检测到您当前使用的设备已经获取超级权限，为了确保数据安全请更换设备！",
                     "退出");
         }
+
+    }
+
+    /**
+     * 设置标题
+     * @param title
+     */
+    public void setTitle(String title) {
+        mTopBar.setTitle(title);
     }
 
     List<String> permissionList; //需要申请权限的列表
@@ -128,8 +142,8 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
 //            permissionList.add(Manifest.permission.CAMERA); //相机
 //            permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION); //位置
 //            permissionList.add(Manifest.permission.ACCESS_COARSE_LOCATION); //位置
-            permissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE); //存储
-            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE); //存储
+//            permissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE); //存储
+//            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE); //存储
             if (falseList == null)
                 falseList = new ArrayList<>(); //未授权的权限列表
             else
@@ -166,6 +180,8 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        LogUtil.d(TAG, "onActivityResult-->requestCode:" +
+                requestCode + ",resultCode:" + resultCode);
         if (requestCode == NOT_SHOW_PERMISSION) {
             //由于不知道是否选择了允许  所以需要再次判断
             permissionApplication();
@@ -352,23 +368,23 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
      */
     protected abstract void initView();
 
-    /**
-     * 设置是否显示标题
-     *
-     * @param showTitle
-     */
-    public void setShowTitle(boolean showTitle) {
-        isShowTitle = showTitle;
-    }
-
-    /**
-     * 设置是否显示状态栏
-     *
-     * @param showStatusBar
-     */
-    public void setShowStatusBar(boolean showStatusBar) {
-        isShowStatusBar = showStatusBar;
-    }
+//    /**
+//     * 设置是否显示标题
+//     *
+//     * @param showTitle
+//     */
+//    public void setShowTitle(boolean showTitle) {
+//        isShowTitle = showTitle;
+//    }
+//
+//    /**
+//     * 设置是否显示状态栏
+//     *
+//     * @param showStatusBar
+//     */
+//    public void setShowStatusBar(boolean showStatusBar) {
+//        isShowStatusBar = showStatusBar;
+//    }
 
     /**
      * toast提示信息

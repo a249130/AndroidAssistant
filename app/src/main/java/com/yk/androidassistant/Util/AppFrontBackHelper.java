@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 /**
  * 应用前后台状态监听帮助类，仅在Application中使用
- * Created by jsgyrcb-yk on 2020/6/1 0001.
+ * Created by yk on 2020/6/1 0001.
  */
 public class AppFrontBackHelper {
 
