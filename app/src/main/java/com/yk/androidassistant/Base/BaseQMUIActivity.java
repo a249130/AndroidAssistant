@@ -1,6 +1,5 @@
 package com.yk.androidassistant.Base;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.PopupWindow;
@@ -118,6 +115,7 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
 
     /**
      * 设置标题
+     *
      * @param title
      */
     public void setTitle(String title) {
@@ -190,7 +188,6 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1) {
             falseList.clear();
             showFalseList.clear();
@@ -221,6 +218,7 @@ public abstract class BaseQMUIActivity extends QMUIActivity {
                 showApplyAlertDialog();
             }
         }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     /**
